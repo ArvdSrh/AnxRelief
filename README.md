@@ -80,7 +80,7 @@ If you have any questions, suggestions, or need support regarding the **AI Assis
 ### Project Maintainer
 
 - **Name:** Arvind S Suresh  
-- **Email:** arvind@gmail.com  
+- **Email:** arvindssuresh@gmail.com  
 - **GitHub:** [github.com/arvind](https://github.com/ArvdSrh)  
 - **LinkedIn:** [linkedin.com/in/arvind](https://linkedin.com/in/ArvdSrh)
 
