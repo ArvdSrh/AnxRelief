@@ -20,7 +20,7 @@ This project is a web-based platform designed to help users track their mental h
 
 1. **Clone this repository:**
    ```sh
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/ArvdSrh/AnxRelief.git
    cd your-repo-name
    ```
 
@@ -62,7 +62,7 @@ To log in as an admin, use:
 ## 🤖 Accessing the AI Model
 
 To use the AI-assisted anxiety detection feature, please visit the following repository and follow its setup instructions:  
-🔗 [AI Model Repository](#)
+🔗 [AI Model Repository](https://github.com/ArvdSrh/AnxRelief-AI-Model)
 
 ---
 
