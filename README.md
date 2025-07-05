@@ -40,7 +40,7 @@ This project is a web-based platform designed to help users track their mental h
    ```
 
 5. **Start the anxiety detection AI model:**
-   Remember to install the model first, refer below.
+   - Remember to install the model first, refer below.
    ```sh
    uvicorn app:app --reload
    ```
