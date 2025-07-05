@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 90vh;
+      position: relative;
+    }
+
+    .mood-calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      background: #e0f7fa;
+      border-radius: 18px;
+      padding: 14px 8px 8px 8px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.06);
+    }
+
+    .calendar-day {
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background: #f7fafc;
+      color: #388e7c;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s;
+      border: 2px solid transparent;
+      font-size: 1.2em;
+    }
+
+    .calendar-day.selected {
+      background: #4dd0e1;
+      color: #fff;
+      border: 2px solid #388e7c;
+      font-weight: 700;
+    }
+
+    .calendar-day.today:not(.selected) {
+      border: 2px solid #4dd0e1;
+      color: #388e7c;
+      background: #b2ebf2;
+    }
+
+    .mood-details-card {
+      background: #e0f7fa;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.08);
+      padding: 22px 22px 16px 22px;
+      margin-bottom: 24px;
+      margin-top: 8px;
+      font-size: 1.08em;
+      color: #2e6e6e;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 180px;
+    }
+
+    .mood-details-date {
+      font-size: 1.05em;
+      color: #388e7c;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .mood-details-emoji {
+      font-size: 2.5em;
+      margin-bottom: 6px;
+      margin-top: 2px;
+      line-height: 1;
+    }
+
+    .mood-details-mood {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #388e7c;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .mood-details-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      width: 100%;
+      font-size: 1.08em;
+    }
+
+    .mood-details-label {
+      min-width: 70px;
+      color: #388e7c;
+      font-weight: 500;
+      margin-right: 8px;
+    }
+
+    .mood-details-value {
+      flex: 1;
+      color: #2e6e6e;
+      word-break: break-word;
+    }
+
+    .mood-details-notes {
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      color: #388e7c;
+      font-style: italic;
+      font-size: 1em;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #b2dfdb;
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .mood-details-empty {
+      color: #aaa;
+      text-align: center;
+      margin: 30px 0 10px 0;
+      font-size: 1.1em;
+    }
+
+    .fab-inside {
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+      margin-bottom: 12px;
+    }
+
+    .fab {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4dd0e1 0%, #388e7c 100%);
+      color: #fff;
+      font-size: 2em;
+      border: none;
+      box-shadow: 0 4px 16px 0 rgba(76, 175, 80, 0.18);
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .fab:hover {
+      background: linear-gradient(135deg, #388e7c 0%, #4dd0e1 100%);
+    }
+
+    /* Modal improvements */
+    .modal-content select,
+    .modal-content input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #b2dfdb;
+      margin-bottom: 12px;
+      font-size: 1em;
+      background: #f7fafc;
+      transition: border 0.2s;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+
+    .modal-content label {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-weight: 500;
+      color: #2e6e6e;
+      display: block;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #388e7c;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .fab-inside {
+        margin-top: 10px;
+      }
+
+      .mood-details-card {
+        padding: 12px 8px 8px 8px;
+      }
+
+      .mood-details-notes {
+        font-size: 0.98em;
+        padding: 7px 6px;
+      }
+
+      .modal-content select,
+      .modal-content input[type="text"] {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="anx-bg">
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="goBack()">&larr;</button>
+      <h2>Mood Tracker</h2>
+    </header>
+    <div style="font-size:1.08em;font-weight:500;margin-bottom:8px;color:#2e6e6e;margin-left:10px;">
+      Select a date
+    </div>
+    <div id="moodCalendar" class="mood-calendar-grid"></div>
+    <div id="moodSummary"></div>
+    <div class="fab-inside">
+      <button class="fab" id="addMoodBtn" title="Add/Update Mood">&#43;</button>
+    </div>
+    <div id="moodModal" class="modal"></div>
+    <div id="moodTrendBox"
+      style="margin-top:40px; background:#fff; border-radius:12px; box-shadow:0 2px 8px #0001; padding:24px; background:#e0f7fa;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-weight:600;font-size:1.1em;">Mood Trend</div>
+        <div style="font-size:1em;color:#388e7c;font-weight:500;">Last 7 days</div>
+      </div>
+      <canvas id="moodTrendChart" height="80" style="margin-top:18px;"></canvas>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/mood_tracker.js" defer></script>
+</body>
+
+</html>

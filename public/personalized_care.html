@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personalized Care</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .care-activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin: 28px 0 32px 0;
+    }
+    .care-activity-card {
+      background: #e0f7fa;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px 0 rgba(76,175,80,0.08);
+      padding: 22px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.18s, transform 0.18s;
+      cursor: pointer;
+      border: 2px solid transparent;
+      min-height: 170px;
+      text-align: center;
+    }
+    .care-activity-card:hover {
+      box-shadow: 0 6px 18px 0 rgba(76,175,80,0.16);
+      border: 2px solid #4dd0e1;
+      transform: translateY(-2px) scale(1.03);
+      background: #b2ebf2;
+    }
+    .care-activity-icon {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      color: #388e7c;
+    }
+    .care-activity-title {
+      font-size: 1.18em;
+      font-weight: 600;
+      color: #388e7c;
+      margin-bottom: 6px;
+    }
+    .care-activity-desc {
+      font-size: 1em;
+      color: #2e6e6e;
+      margin-bottom: 0;
+    }
+    .btn-center {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .btn-main {
+      margin-top: 18px;
+      width: 100%;
+      max-width: 320px;
+      font-size: 1.1em;
+      padding: 12px 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #4dd0e1 0%, #388e7c 100%);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 2px 8px 0 rgba(76,175,80,0.08);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-main:hover {
+      background: linear-gradient(135deg, #388e7c 0%, #4dd0e1 100%);
+    }
+    @media (max-width: 600px) {
+      .care-activities-grid { gap: 10px; }
+      .care-activity-card { padding: 14px 8px 10px 8px; min-height: 120px; }
+      .btn-main { font-size: 1em; }
+    }
+  </style>
+</head>
+<body class="anx-bg">
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="goBack()">&larr;</button>
+      <h2>Personalized Care</h2>
+    </header>
+    <div id="careActivities" class="care-activities-grid"></div>
+    <div class="btn-center">
+      <button class="btn-main" onclick="window.location='talk_space.html'">Need further help? Get in touch</button>
+    </div>
+  </div>
+  <script src="js/personalized_care.js" defer></script>
+</body>
+</html>

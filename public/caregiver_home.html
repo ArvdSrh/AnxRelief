@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caregiver Home | AnxRelief</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #222;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+            background: #e0f7fa;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px 0 rgba(76, 175, 80, 0.08);
+            padding: 32px 24px 32px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .anxrelief-logo {
+            width: 90px;
+            margin-bottom: 18px;
+        }
+
+        .caregiver-title {
+            font-size: 1.22em;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #222;
+            text-align: center;
+        }
+
+        .caregiver-btn-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 32px;
+        }
+
+        .caregiver-btn {
+            width: 100%;
+            padding: 14px 0;
+            border-radius: 16px;
+            background: #7e9866;
+            color: #fff;
+            font-size: 1.13em;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background 0.18s;
+            box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.08);
+            letter-spacing: 0.5px;
+        }
+
+        .caregiver-btn:hover {
+            background: #558b2f;
+        }
+
+        .logout-btn {
+            width: 100%;
+            padding: 14px 0;
+            border-radius: 16px;
+            background: #b2dfdb;
+            color: #222;
+            font-size: 1.13em;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            margin-top: 18px;
+            transition: background 0.18s;
+            box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.08);
+        }
+
+        .logout-btn:hover {
+            background: #80cbc4;
+            color: #111;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 2vw 18px 2vw;
+            }
+
+            .anxrelief-logo {
+                width: 64px;
+            }
+
+            .caregiver-btn,
+            .logout-btn {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/logo.png" alt="AnxRelief" class="anxrelief-logo" />
+        <div class="caregiver-title" id="caregiverWelcome">Welcome, Caregiver</div>
+        <div class="caregiver-btn-list">
+            <button class="caregiver-btn" id="appointmentsBtn">Appointments</button>
+            <button class="caregiver-btn" id="patientsBtn">List of Patients</button>
+            <button class="caregiver-btn" id="profileBtn">Profile</button>
+        </div>
+        <button class="logout-btn" id="logoutBtn">Log Out</button>
+    </div>
+    <script src="js/caregiver_home.js" defer></script>
+</body>
+
+</html>

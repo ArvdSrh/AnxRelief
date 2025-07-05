@@ -1,0 +1,118 @@
+body {
+  background: linear-gradient(120deg, #e0eafc, #cfdef3);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+header {
+  color: #fff;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+}
+.test {
+  max-width: 520px;
+  margin: 2rem auto;
+  background: #f8fff8cc;
+  border-radius: 18px;
+  padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  position: relative;
+  min-height: 400px;
+}
+.question-card {
+  background: #f8fff8cc;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.18rem;
+  font-weight: 500;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+}
+.progress-bar {
+  width: 100%;
+  background: #e3eafc;
+  border-radius: 8px;
+  height: 12px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3a8dde, #6ed0f6);
+  width: 0%;
+  transition: width 0.4s;
+}
+.question-count {
+  text-align: right;
+  color: #3a8dde;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.btn {
+  background: #3a8dde;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0.5rem 0 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(58,141,222,0.08);
+}
+.btn:disabled {
+  background: #b3c9e6;
+  cursor: not-allowed;
+}
+.loading {
+  color: #3a8dde;
+  font-size: 1.1rem;
+  margin-top: 1.2rem;
+  text-align: center;
+  display: none;
+}
+.anxiety-result {
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d6ca2;
+  text-align: center;
+  min-height: 32px;
+}
+.final-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #e3f6f5;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1b4d6b;
+  box-shadow: 0 2px 8px rgba(58,141,222,0.06);
+  animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+video {
+  display: none;
+}
+ol {
+  text-align: left;
+  margin: 0 auto 1rem auto;
+  padding-left: 1.2em;
+  max-width: 95%;
+}
+ol li {
+  margin-bottom: 1.2em;
+  background: #f8fbff;
+  border-radius: 8px;
+  padding: 0.7em 1em;
+  box-shadow: 0 1px 4px rgba(58,141,222,0.03);
+}

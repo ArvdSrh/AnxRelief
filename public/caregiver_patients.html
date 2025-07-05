@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Patients | AnxRelief</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    .container {
+      max-width: 400px;
+      margin: 40px auto 0 auto;
+      background: #e0f7fa;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px 0 rgba(76,175,80,0.08);
+      padding: 32px 24px 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-title {
+      font-size: 1.18em;
+      font-weight: 700;
+      color: #388e7c;
+      margin: 0 0 18px 0;
+      width: 100%;
+      text-align: left;
+    }
+    .patient-list {
+      width: 100%;
+      margin-top: 10px;
+    }
+    .patient-card {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 12px;
+      border: 2px solid #b2dfdb;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px 0 rgba(76,175,80,0.06);
+      gap: 16px;
+    }
+    .patient-avatar {
+      font-size: 2em;
+      margin-right: 12px;
+    }
+    .patient-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .patient-name {
+      font-weight: 600;
+      color: #388e7c;
+      font-size: 1.13em;
+      margin-bottom: 2px;
+      word-break: break-word;
+    }
+    .patient-email {
+      color: #555;
+      font-size: 0.98em;
+      word-break: break-word;
+    }
+    .no-patients {
+      color: #aaa;
+      text-align: center;
+      margin: 18px 0;
+      font-size: 1.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="window.history.back()">&larr;</button>
+      <h2>My Patients</h2>
+    </header>
+    <div id="patientList" class="patient-list"></div>
+  </div>
+  <script src="js/caregiver_patients.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Live Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #222;
+            min-height: 100vh;
+        }
+
+        .chat-container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px 0 rgba(76, 175, 80, 0.08);
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            padding: 18px 24px;
+            border-bottom: 1px solid #b2dfdb;
+            font-weight: 700;
+            color: #388e7c;
+            font-size: 1.15em;
+            border-radius: 18px 18px 0 0;
+            gap: 10px;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: #388e7c;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-right: 10px;
+            padding: 0 8px 0 0;
+            transition: color 0.18s;
+        }
+        .back-btn:hover {
+            color: #2e6e5e;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 18px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f5fefd;
+        }
+
+        .chat-message {
+            max-width: 70%;
+            padding: 10px 16px;
+            border-radius: 16px;
+            font-size: 1em;
+            word-break: break-word;
+            box-shadow: 0 1px 4px 0 rgba(76, 175, 80, 0.04);
+            position: relative;
+        }
+
+        .chat-message.self {
+            align-self: flex-end;
+            background: #b2f7ef;
+            color: #222;
+            border-bottom-right-radius: 4px;
+        }
+
+        .chat-message.other {
+            align-self: flex-start;
+            background: #e0f7fa;
+            color: #388e7c;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 16px 18px;
+            border-top: 1px solid #b2dfdb;
+            background: #f5fefd;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: 1px solid #b2dfdb;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .chat-send-btn {
+            margin-left: 10px;
+            background: #388e7c;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 18px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.18s;
+        }
+
+        .chat-send-btn:active {
+            background: #2e6e5e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <button class="back-btn" onclick="goBack()">&larr;</button>
+            Live Chat
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <form id="chatForm" class="chat-input-area" autocomplete="off">
+            <input id="chatInput" class="chat-input" type="text" placeholder="Type a message..." autocomplete="off"
+                required>
+            <button type="submit" class="chat-send-btn">Send</button>
+        </form>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="js/live_chat.js" defer></script>
+</body>
+
+</html>

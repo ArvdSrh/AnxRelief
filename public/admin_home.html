@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body.anx-bg {
+      background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    .container.home {
+      max-width: 400px;
+      margin: 60px auto 0 auto;
+      background: #e0f7fa;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px 0 rgba(76,175,80,0.08);
+      padding: 32px 24px 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 18px;
+    }
+    h2 {
+      margin-bottom: 28px;
+      color: #388e7c;
+    }
+    .btn-main {
+      width: 100%;
+      padding: 14px 0;
+      margin-bottom: 16px;
+      font-size: 1.08em;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      background: #388e7c;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .btn-main:last-child {
+      margin-bottom: 0;
+      background: #e57373;
+    }
+    .btn-main:hover {
+      background: #2e6e5e;
+    }
+    .btn-main:last-child:hover {
+      background: #c62828;
+    }
+  </style>
+</head>
+<body class="anx-bg">
+  <div class="container home">
+    <img src="images/logo.png" alt="AnxRelief" class="logo">
+    <h2>Administrator</h2>
+    <button class="btn-main" onclick="window.location='admin_patients.html'">List of Patients</button>
+    <button class="btn-main" onclick="window.location='admin_caregivers.html'">List of Caregiver</button>
+    <button class="btn-main" onclick="window.location='admin_appointments.html'">List of Appointments</button>
+    <button class="btn-main" onclick="window.location='admin_registration.html'">Registration Approval</button>
+    <button class="btn-main" onclick="logout()">Log Out</button>
+  </div>
+  <script src="js/admin_home.js" defer></script>
+</body>
+</html>

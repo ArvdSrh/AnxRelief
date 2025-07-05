@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AnxRelief - Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="anx-bg">
+  <div class="container">
+    <img src="images/logo.png" alt="AnxRelief" class="logo">
+    <h2>Register</h2>
+    <form id="registerForm" class="form" enctype="multipart/form-data">
+      <label>Register as</label>
+      <select name="type" id="userType" required>
+        <option value="patient">Patient</option>
+        <option value="caregiver">Caregiver</option>
+      </select>
+      <label>Full Name</label>
+      <input type="text" name="fullName" required placeholder="Enter Full Name">
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="Enter Email">
+      <label>Phone Number</label>
+      <input type="tel" name="phone" required placeholder="Enter Phone Number">
+      <label>Gender</label>
+      <select name="gender" required>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <div id="certUpload" style="display:none;">
+        <label>Upload Certificate (Caregiver only)</label>
+        <input type="file" name="certificate" accept=".pdf,.jpg,.jpeg,.png">
+      </div>
+      <label>Password</label>
+      <input type="password" name="password" required placeholder="Enter Password">
+      <label>Confirm Password</label>
+      <input type="password" name="confirmPassword" required placeholder="Re-enter Password">
+      <button type="submit" class="btn-main">Register</button>
+    </form>
+    <div class="center">
+      <a href="login.html" class="link">Already have an account? Login</a>
+    </div>
+    <div id="registerError" class="error"></div>
+  </div>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

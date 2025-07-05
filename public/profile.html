@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .profile-card {
+      background: #e0f7fa;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px 0 rgba(76,175,80,0.08);
+      padding: 28px 24px 24px 24px;
+      max-width: 420px;
+      margin: 32px auto 24px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8em;
+      margin-bottom: 14px;
+      border: 2px solid #b2dfdb;
+      color: #388e7c;
+    }
+    .profile-info-list {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .profile-info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 1.08em;
+    }
+    .profile-info-label {
+      color: #388e7c;
+      font-weight: 600;
+      min-width: 90px;
+    }
+    .profile-info-value {
+      color: #2e6e6e;
+      font-weight: 500;
+      text-align: right;
+      word-break: break-word;
+      flex: 1;
+      margin-left: 10px;
+    }
+    .btn-main {
+      width: 100%;
+      max-width: 320px;
+      font-size: 1.1em;
+      padding: 12px 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #4dd0e1 0%, #388e7c 100%);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 2px 8px 0 rgba(76,175,80,0.08);
+      cursor: pointer;
+      transition: background 0.2s;
+      margin: 0 auto 18px auto;
+      display: block;
+    }
+    .btn-main:hover {
+      background: linear-gradient(135deg, #388e7c 0%, #4dd0e1 100%);
+    }
+    /* Modal styles */
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 22px 18px 22px;
+      max-width: 350px;
+      width: 95vw;
+      box-shadow: 0 2px 16px 0 rgba(76,175,80,0.14);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-content h3 {
+      margin-top: 0;
+      color: #388e7c;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .modal-content label {
+      margin-top: 8px;
+      margin-bottom: 4px;
+      font-weight: 500;
+      color: #2e6e6e;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .modal-content input,
+    .modal-content select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #b2dfdb;
+      margin-bottom: 12px;
+      font-size: 1em;
+      background: #f7fafc;
+      transition: border 0.2s;
+    }
+    .modal-content .btn-main {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+    .modal-content .btn-cancel {
+      background: #b2dfdb;
+      color: #222;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .modal-content .btn-cancel:hover {
+      background: #80cbc4;
+    }
+    .profile-error {
+      color: #b71c1c;
+      background: #ffcdd2;
+      border-radius: 8px;
+      padding: 8px 0;
+      margin-bottom: 8px;
+      width: 100%;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .profile-card { padding: 14px 4px 12px 4px; }
+      .modal-content { padding: 14px 4px 10px 4px; }
+      .btn-main { font-size: 1em; }
+    }
+  </style>
+</head>
+<body class="anx-bg">
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="goBack()">&larr;</button>
+      <h2>Profile</h2>
+    </header>
+    <div id="profileDetails"></div>
+    <button class="btn-main" id="editProfileBtn">Edit Profile</button>
+    <div id="editProfileModal" class="modal"></div>
+  </div>
+  <script src="js/profile.js" defer></script>
+</body>
+</html>

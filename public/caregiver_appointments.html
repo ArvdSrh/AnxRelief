@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Appointments | AnxRelief</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #222;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+            background: #e0f7fa;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px 0 rgba(76, 175, 80, 0.08);
+            padding: 32px 24px 32px 24px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 1.18em;
+            font-weight: 700;
+            color: #388e7c;
+            margin: 0 0 18px 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        .appointments-group {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .appointment-card {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border-radius: 16px;
+            border: 2px solid #b2dfdb;
+            padding: 0;
+            gap: 0;
+            box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.06);
+            margin-bottom: 14px;
+            overflow: hidden;
+            min-height: 80px;
+            margin-right: auto;
+        }
+
+        .appointment-date {
+            background: #8bc6b6;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1em;
+            min-width: 70px;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px 0 0 16px;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
+
+        .appointment-info {
+            flex: 2 1 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 16px 0;
+            min-width: 0;
+        }
+
+        .appointment-patient {
+            font-weight: 600;
+            color: #388e7c;
+            font-size: 1.18em;
+            margin-bottom: 2px;
+            word-break: break-word;
+        }
+
+        .appointment-time {
+            color: #555;
+            font-size: 1em;
+        }
+
+        .appointment-join {
+            background: #c8e6c9;
+            color: #388e7c;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 18px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 16px 0 0;
+            transition: background 0.18s;
+            min-width: 64px;
+        }
+
+        .appointment-join[disabled] {
+            background: #e0e0e0;
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        .appointment-arrow {
+            margin: 0 16px 0 0;
+            font-size: 1.5em;
+            color: #8bc6b6;
+            background: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            padding: 0 8px;
+            transition: background 0.18s;
+        }
+
+        .appointment-arrow:active {
+            background: #e0f7fa;
+        }
+
+        .no-appointments {
+            color: #aaa;
+            text-align: center;
+            margin: 18px 0;
+            font-size: 1.08em;
+        }
+
+        .appointment-cancel {
+            background: #ffcdd2;
+            color: #b71c1c;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 18px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 16px 0 0;
+            transition: background 0.18s;
+            min-width: 64px;
+        }
+
+        .appointment-cancel:active {
+            background: #e57373;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 18px 2vw 18px 2vw;
+            }
+
+            .appointment-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .appointment-date {
+                border-radius: 16px 16px 0 0;
+                margin: 0;
+                min-width: 100%;
+                min-height: 48px;
+            }
+
+            .appointment-info {
+                padding: 10px 0;
+                align-items: center;
+            }
+
+            .appointment-join,
+            .appointment-arrow {
+                margin: 10px auto 10px auto;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn" onclick="goBack()">&larr;</button>
+            <h2>Appointments</h2>
+        </header>
+        <div id="appointmentsList"></div>
+    </div>
+    <script src="js/caregiver_appointments.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment | Talk Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .booking-container {
+      max-width: 420px;
+      margin: 32px auto 0 auto;
+      background: #e0f7fa;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px 0 rgba(76,175,80,0.08);
+      padding: 28px 24px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .caregiver-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      width: 100%;
+    }
+    .caregiver-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5em;
+      border: 2px solid #b2dfdb;
+    }
+    .caregiver-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .caregiver-name {
+      font-weight: 700;
+      color: #388e7c;
+      font-size: 1.15em;
+      margin-bottom: 2px;
+    }
+    .caregiver-desc {
+      color: #555;
+      font-size: 1em;
+      margin-bottom: 2px;
+    }
+    .caregiver-exp {
+      color: #388e7c;
+      font-size: 0.98em;
+      font-weight: 500;
+    }
+    .booking-label {
+      font-weight: 600;
+      color: #388e7c;
+      margin: 18px 0 6px 0;
+      width: 100%;
+      text-align: left;
+      font-size: 1.08em;
+    }
+    .booking-calendar {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .calendar-day-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: #388e7c;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      margin-bottom: 2px;
+    }
+    .calendar-day-btn.selected,
+    .calendar-day-btn:focus {
+      background: #4dd0e1;
+      color: #fff;
+      outline: none;
+    }
+    .calendar-day-btn:disabled {
+      background: #eee;
+      color: #bbb;
+      cursor: not-allowed;
+    }
+    .booking-timeslots {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .timeslot-btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      border: none;
+      background: #fff;
+      color: #388e7c;
+      font-weight: 600;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .timeslot-btn.selected,
+    .timeslot-btn:focus {
+      background: #4dd0e1;
+      color: #fff;
+      outline: none;
+    }
+    .timeslot-btn:disabled {
+      background: #eee;
+      color: #bbb;
+      cursor: not-allowed;
+    }
+    .btn-main {
+      width: 100%;
+      max-width: 320px;
+      font-size: 1.1em;
+      padding: 12px 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #4dd0e1 0%, #388e7c 100%);
+      color: #fff;
+      border: none;
+      font-weight: 600;
+      box-shadow: 0 2px 8px 0 rgba(76,175,80,0.08);
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 18px;
+    }
+    .btn-main:disabled {
+      background: #b2dfdb;
+      color: #888;
+      cursor: not-allowed;
+    }
+    .booking-success, .booking-error {
+      margin-top: 18px;
+      font-size: 1.08em;
+      text-align: center;
+      border-radius: 8px;
+      padding: 10px 0;
+      width: 100%;
+    }
+    .booking-success {
+      background: #c8e6c9;
+      color: #256029;
+      font-weight: 600;
+    }
+    .booking-error {
+      background: #ffcdd2;
+      color: #b71c1c;
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .booking-container { padding: 14px 4px 12px 4px; }
+      .caregiver-profile { gap: 8px; }
+      .btn-main { font-size: 1em; }
+    }
+  </style>
+</head>
+<body class="anx-bg">
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="goBack()">&larr;</button>
+      <h2>Book Appointment</h2>
+    </header>
+    <div class="booking-container">
+      <div id="caregiverProfile"></div>
+      <div class="booking-label">Select Date</div>
+      <div id="calendar" class="booking-calendar"></div>
+      <div class="booking-label">Time</div>
+      <div id="timeslots" class="booking-timeslots"></div>
+      <button id="bookBtn" class="btn-main" disabled>Book</button>
+      <div id="bookingMsg"></div>
+    </div>
+  </div>
+  <script src="js/booking.js" defer></script>
+</body>
+</html>

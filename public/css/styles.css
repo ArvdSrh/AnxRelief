@@ -1,0 +1,407 @@
+/* General Styles */
+body.anx-bg {
+  background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #f8fff8cc;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+  padding: 32px 18px 24px 18px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+header h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #2e6e6e;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: #2e6e6e;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #e0f7fa;
+  object-fit: contain;
+}
+
+h2, h1 {
+  text-align: center;
+  color: #2e6e6e;
+  margin-bottom: 12px;
+}
+
+.intro {
+  text-align: center;
+  color: #4a7c7c;
+  margin-bottom: 18px;
+  font-size: 1.1em;
+}
+
+.form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #2e6e6e;
+}
+
+.form input, .form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #b2dfdb;
+  margin-bottom: 8px;
+  font-size: 1em;
+  background: #f7fafc;
+  transition: border 0.2s;
+  box-sizing: border-box;
+}
+
+.form input:focus, .form select:focus {
+  border: 1.5px solid #4dd0e1;
+  outline: none;
+}
+
+.btn-main {
+  width: 100%;
+  background: linear-gradient(90deg, #4dd0e1 0%, #388e7c 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.08);
+}
+
+.btn-main:hover, .btn-main:focus {
+  background: linear-gradient(90deg, #388e7c 0%, #4dd0e1 100%);
+}
+
+.center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link {
+  color: #388e7c;
+  text-decoration: underline;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.error {
+  color: #d32f2f;
+  background: #fff0f0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.98em;
+}
+
+.success {
+  color: #388e7c;
+  background: #e0f7fa;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.98em;
+}
+
+/* Home Shortcuts */
+.shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 18px 0;
+}
+
+.shortcut-btn {
+  flex: 1 1 45%;
+  min-width: 120px;
+  background: #e0f7fa;
+  color: #2e6e6e;
+  border: none;
+  border-radius: 10px;
+  padding: 16px 0;
+  font-size: 1em;
+  font-weight: 600;
+  margin: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(76, 175, 80, 0.06);
+  transition: background 0.2s;
+}
+
+.shortcut-btn:hover, .shortcut-btn:focus {
+  background: #b2ebf2;
+}
+
+/* Overview List */
+.overview-list {
+  margin-top: 18px;
+}
+
+.overview-item {
+  display: flex;
+  align-items: center;
+  background: #e0f7fa;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 14px 12px;
+  box-shadow: 0 1px 4px 0 rgba(76, 175, 80, 0.06);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.overview-item:hover {
+  background: #b2ebf2;
+}
+
+.overview-icon {
+  font-size: 2em;
+  margin-right: 14px;
+}
+
+.overview-content {
+  flex: 1;
+}
+
+.overview-title {
+  font-weight: 600;
+  color: #2e6e6e;
+}
+
+.overview-summary {
+  color: #388e7c;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+/* Calendar Styles */
+.calendar {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 0 10px 0;
+}
+
+.calendar-day {
+  flex: 1;
+  text-align: center;
+  border-radius: 8px;
+  background: #e0f7fa;
+  margin: 0 2px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2e6e6e;
+  transition: background 0.2s;
+}
+
+.calendar-day.selected, .calendar-day:hover {
+  background: #4dd0e1;
+  color: #fff;
+}
+
+/* Floating Action Button */
+.fab {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4dd0e1 0%, #388e7c 100%);
+  color: #fff;
+  font-size: 2em;
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(76, 175, 80, 0.18);
+  cursor: pointer;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab:active {
+  background: linear-gradient(135deg, #388e7c 0%, #4dd0e1 100%);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.18);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 18px;
+  max-width: 340px;
+  width: 90vw;
+  margin: auto;
+  box-shadow: 0 4px 24px 0 rgba(76, 175, 80, 0.12);
+}
+
+/* Admin/Caregiver/Patient List Cards */
+.list-card {
+  display: flex;
+  align-items: center;
+  background: #e0f7fa;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 12px 10px;
+  box-shadow: 0 1px 4px 0 rgba(76, 175, 80, 0.06);
+}
+
+.list-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #b2dfdb;
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: #388e7c;
+}
+
+.list-info {
+  flex: 1;
+}
+
+.list-title {
+  font-weight: 600;
+  color: #2e6e6e;
+}
+
+.list-sub {
+  color: #4a7c7c;
+  font-size: 0.98em;
+}
+
+.list-action {
+  margin-left: 10px;
+}
+
+.action-btn, .approve-btn, .reject-btn, .revoke-btn, .join-btn {
+  background: #388e7c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 2px 0;
+  transition: background 0.2s;
+}
+
+.action-btn:hover, .approve-btn:hover, .revoke-btn:hover, .join-btn:hover {
+  background: #4dd0e1;
+}
+
+.reject-btn {
+  background: #d32f2f;
+}
+
+.reject-btn:hover {
+  background: #f44336;
+}
+
+.revoke-btn {
+  background: #fbc02d;
+  color: #222;
+}
+
+.revoke-btn:hover {
+  background: #ffd54f;
+}
+
+.join-btn {
+  background: #388e7c;
+}
+
+.join-btn:disabled {
+  background: #b2dfdb;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Search Bar */
+.search {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #b2dfdb;
+  margin-bottom: 14px;
+  font-size: 1em;
+  background: #f7fafc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container {
+    max-width: 98vw;
+    margin: 0 1vw;
+    padding: 18px 4vw 18px 4vw;
+  }
+  .fab {
+    right: 18px;
+    bottom: 18px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e0f7fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #b2dfdb;
+  border-radius: 8px;
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "admin-001",
+    "fullName": "Admin",
+    "email": "admin@anx.com",
+    "phone": "0123456789",
+    "gender": "other",
+    "password": "$2b$10$KmSLsgtLhbyLnKB7DGwGzeE0UWPi4I9BSDEI/dusRm1FJby1DUE5W",
+    "type": "admin",
+    "status": "accepted",
+    "certificate": null,
+    "registeredAt": "2025-06-23T00:00:00.000Z"
+  }
+]

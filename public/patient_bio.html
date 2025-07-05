@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Overview | AnxRelief</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #b2f7ef 0%, #6ec6ca 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    .container {
+      max-width: 400px;
+      margin: 40px auto 0 auto;
+      background: #e0f7fa;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px 0 rgba(76,175,80,0.08);
+      padding: 32px 24px 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      font-size: 1.7em;
+      color: #388e7c;
+      cursor: pointer;
+      margin-right: 10px;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .bio-title {
+      font-size: 1.25em;
+      font-weight: 700;
+      color: #388e7c;
+      margin: 0;
+      flex: 1;
+      text-align: center;
+    }
+    .chart-section {
+      width: 100%;
+      margin-bottom: 32px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px #0001;
+      padding: 18px 14px 10px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .chart-title {
+      font-weight: 600;
+      color: #388e7c;
+      font-size: 1.08em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    @media (max-width: 600px) {
+      .container { max-width: 99vw; padding: 10vw 2vw; }
+      .chart-section { padding: 4vw 2vw 2vw 2vw; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button class="back-btn" onclick="window.history.back()" title="Back">&#8592;</button>
+      <span class="bio-title" id="bioTitle">Patient Overview</span>
+    </header>
+    <div class="chart-section">
+      <div class="chart-title">Sleep Trend (Last 7 days)</div>
+      <canvas id="sleepTrendChart" height="80"></canvas>
+    </div>
+    <div class="chart-section">
+      <div class="chart-title">Food Intake Trend (Last 7 days)</div>
+      <canvas id="foodTrendChart" height="80"></canvas>
+    </div>
+    <div class="chart-section">
+      <div class="chart-title">Mood Trend (Last 7 days)</div>
+      <canvas id="moodTrendChart" height="80"></canvas>
+    </div>
+    <div class="chart-section">
+      <div class="chart-title">Physical Activity Trend (Last 7 days)</div>
+      <canvas id="activityTrendChart" height="80"></canvas>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/patient_bio.js"></script>
+</body>
+</html>
