@@ -39,7 +39,13 @@ This project is a web-based platform designed to help users track their mental h
    node server_detection
    ```
 
-4. **Access the app:**  
+5. **Start the anxiety detection AI model:**
+   Remember to install the model first, refer below.
+   ```sh
+   uvicorn app:app --reload
+   ```
+
+6. **Access the app:**  
    Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
 ---
